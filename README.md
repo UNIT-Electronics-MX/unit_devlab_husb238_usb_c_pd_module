@@ -1,24 +1,15 @@
 
-# DevLab: [Protocolo/Interfaz] [Chip/Modelo] [Descripción ligera][Module/Sensor/Shield/Adapter]
-<!-- Exception:
-
-The PULSAR development board line does not use the DevLab: prefix.
-
-Format: PULSAR [MCU/Model]
-
-Examples: PULSAR C6, PULSAR H2, PULSAR RP2350
-
-The JUN R3 board also does not use DevLab:
-
-Example: JUN R3 -->
+# DevLab: HUSB238 USB-C PD Module
 
 ## Introduction
 
-This is a modular development board based on a popular microcontroller, designed for rapid prototyping and educational use. It features flexible power options, modern connectivity, and user-friendly interfaces. An integrated LED matrix allows for simple visual feedback and display.
+This module is a versatile USB-C Power Delivery (PD) Sink and System Interface designed around the USB238 controller. It bridges the gap between modern USB-C power sources and embedded electronics, allowing you to negotiate high voltages for driving loads while simultaneously providing a regulated 3.3V rail for logic and sensors.
+
+With onboard QWIIC connectors, this board integrates seamlessly into the I2C ecosystem, making it an ideal power hub for IoT projects, robotics, and rapid prototyping.
 
 <div align="center">
-  <img src="hardware/resources/unit_top_v_1_0_0_icp10111_barometric_pressure_sensor.png" width="450px" alt="Development Board">
-  <p><em>Development Board</em></p>
+  <img src="./hardware/resources/unit_top_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.png" width="450px" alt="HUSB238 USB-C PD Module">
+  <p><em>HUSB238 USB-C PD Module</em></p>
 </div>
 
 <div align="center">
@@ -36,32 +27,30 @@ This is a modular development board based on a popular microcontroller, designed
 
 ## Overview
 
-| Feature           | Description                                         |
-|-------------------|-----------------------------------------------------|
-| Microcontroller   | 8-bit MCU                                           |
-| Memory            | Flash, SRAM, EEPROM                                 |
-| Clock Speed       | 16 MHz                                              |
-| Power Supply      | USB-C (5V)                                          |
-| Interfaces        | UART, I2C, SPI, PWM, ADC, GPIO                      |
-| LED Matrix        | 5x5 RGB LED Matrix                                  |
-| Connectivity      | USB-C for programming and power                     |
-| Form Factor       | UNO-compatible                                      |
-| Development IDEs  | Arduino IDE, PlatformIO                             |
-| Onboard Features  | Integrated LED matrix, programmable LED, reset button|
-| Expansion Port    | I2C connector for sensors and modules               |
+| Feature                | Description                                                      |
+|------------------------|------------------------------------------------------------------|
+| USB PD IC              | HUSB238                                                          |
+| Compatible voltages    | 3.3V, 5V, 9V, 12V, 15V, 18V, 20V                                 |
+| Maximum output current | 5A                                                               |
+| Power Supply           | USB-C                                                            |
+| Interfaces             | I2C, PD3.0m type-C V1.4, Apple Divider 3, BC1.2 SDP, CDP and DCP |
+| Expansion Port         | I2C connector for sensors and modules                            |
 
 </div>
 
+* **Note:** Output voltages and currents may vary with the characteristics of the power supply  
+
+
 ## Applications
 
-- **Prototyping:** Quickly develop and test ideas.
-- **Education:** Suitable for learning microcontroller basics.
-- **Wearables:** Compact and versatile for wearable devices.
-- **Displays:** Use the LED matrix for simple visual output.
+- **USB-C Power Upgrade:** Retrofit legacy DC-jack powered devices (routers, modems, soldering irons) to use modern USB-C chargers.
+- **High-Power IoT Nodes:** Power 12V or 20V actuators/solenoids via the terminal block while powering an ESP32 or microcontroller via the 3.3V rail/Qwiic system.
+- **Sensor Hub:** Acts as a central power and data injection point for Qwiic-based environmental sensor arrays.
+- **Portable Lab Supply:** Create a compact, variable voltage power supply using a USB-C power bank.
 
 ## Resources
 
-- [Schematic Diagram](#)
+- <a href="./hardware/unit_sch_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.pdf">Schematic Diagram</a>
 - [Pinout Diagram](#)
 - [Getting Started Guide](#)
 

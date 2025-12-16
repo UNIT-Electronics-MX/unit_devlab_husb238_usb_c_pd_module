@@ -1,29 +1,25 @@
-> **Note of Development:**  
-> This hardware module is under active development. File and directory structures, naming conventions, and documentation formats may change as the design evolves.  
-> 
-> - **File Naming:**  
->   - Use capital letters and underscores only.  
->   - Start filenames with `unit_<filename>_v_<version>_<description>.<ext>`.  
->   - Example: `unit_icp10111_barometric_pressure_sensor_v_1_0_0.png`
->   - Schematic: `schematic_v_<version>_<description>.<ext>` (e.g., `schematic_v_1_0_0_icp10111_barometric_pressure_sensor.png`)
->   - Topology: `unit_topology_v_<version>_<description>.<ext>`
->   - Dimensions: `unit_dimension_v_<version>_<description>.<ext>`
-> 
-> - **README Structure:**  
->   - Hardware overview  
->   - Pinout and connector layout  
->   - Dimensions and topology  
->   - Functional description  
->   - Applications  
->   - References  
-> 
-> Please refer to the latest commit history for updates and changes.
-
 # Hardware
 
 <div align="center">
-<a href="{{schematic_url}}"><img src="resources/Schematics_icon.jpg?raw=false" width="200px"><br/>Schematic</a>
+<a href="./unit_sch_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.pdf"><img src="resources/Schematics_icon.jpg?raw=false" width="200px"><br/>Schematic</a>
 </div>
+
+## Key Technical Specifications
+
+<div align="center">
+
+| **Parameter** |           **Description**            | **Min** | **Typ** | **Max** | **Unit** |
+|:-------------:|:------------------------------------:|:-------:|:-------:|:-------:|:--------:|
+|      Vin      | Input voltage to power on the module |    5    |    -    |   20    |    V     |
+|      Vih      |   High-level input voltage for I2C   |   1.4   |    -    |   5.5   |    V     |
+|      Vil      |   Low-level input voltage for I2C    |    -    |    -    |   0.4   |    V     |
+|      Icc      |            Supply Current            |    -    |   3.1   |    -    |    mA    |
+|     I3v3      |   3V3 Power Supply Output Current    |    -    |    -    |    2    |    A     |
+ 
+
+</div>
+
+* **Note:** Output voltages and currents may vary with the characteristics of the power supply 
 
 ## Pinout
 
@@ -41,33 +37,10 @@
 
 </div>
 
-## Dimensions
-
-<div align="center">
-<a href="./resources/unit_dimension_v_1_0_0_icp10111_barometric_pressure_sensor.png"><img src="./resources/unit_dimension_v_1_0_0_icp10111_barometric_pressure_sensor.png" width="500px"><br/> Dimensions</a>
-</div>
-
-## Topology
-
-<div align="center">
-
-<div align="center">
-<a href="./resources/unit_topology_V_0_0_1_ue0099_Sensor_Touch.png"><img src="./resources/unit_topology_V_0_0_1_ue0099_Sensor_Touch.png" width="500px"><br/> Topology</a>
-<br/>
-<br/>
-<br/>
-
-| Ref. | Description                              |
-|------|------------------------------------------|
-| IC1  | {{sensor_description}}                   |
-| L1   | Power On LED                             |
-| U1   | {{regulator_description}}                | 
-| JP1  | 2.54 mm Castellated Holes                |
-| J1   | QWIIC Connector (JST 1 mm pitch) for I2C |
-
-</div>
-
 ## Pin & Connector Layout
+
+<div align="center">
+
 | Pin   | Voltage Level | Function                                                  |
 |-------|---------------|-----------------------------------------------------------|
 | VCC   | 3.3 V – 5.5 V | Provides power to the on-board regulator and sensor core. |
@@ -77,14 +50,41 @@
 
 > **Note:** The module also includes a Qwiic/STEMMA QT connector carrying the same four signals (VCC, GND, SDA, SCL) for effortless daisy-chaining.
 
-## Functional Description
+</div>
 
-{{functional_description}}
+## Topology
 
-## Applications
+<div align="center">
+<a href="./resources/unit_topology_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.png><img src="><img src="./resources/unit_topology_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.png" width="500px"><br/> Topology</a>
+<br/>
+<br/>
+<br/>
 
-{{applications_list}}
+| Ref.  | Description                                             |
+|-------|---------------------------------------------------------|
+| J1    | USB Type-C Connector                                    |
+| J2-J6 | QWIIC Connectors for I2C (JST 1mm)                      |
+| J7    | Screw Terminal Block for VUSB                           |
+| L1    | Power On LED                                            |
+| IC1   | HUSB238                                                 |
+| SW1   | Dip Switch for voltage selector                         |
+| U1    | TPS54302 3.3V Regulator                                 |
+| JP1   | Pin Header for 3V3 power supply and GND                 |
+| JB1   | Jumper Bridge to Join HUSB238 SDA with QWIIC Connectors |
+| JB2   | Jumper Bridge to Join HUSB238 SCL with QWIIC Connectors |
+| P1    | Pads for 3.3V Power Supply                              |
+| TP1   | Test Points for PD Vset                                 |
+| TP2   | USB Test Points                                         |
+
+</div>
+
+## Dimensions
+
+<div align="center">
+<a href="./resources/unit_dimension_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.png"><img src="./resources/unit_dimension_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.png" width="500px"><br/> Dimensions</a>
+</div>
 
 # References
 
-- [{{datasheet_name}}]({{datasheet_url}})
+- <a href="./resources/unit_datasheet_v_1_0_0_ue0084_husb238.pdf">HUSB238 Datasheet </a>
+- <a href="./resources/unit_datasheet_v_1_0_0_ue0084_tps54302.pdf">TPS54302 Datasheet </a>
