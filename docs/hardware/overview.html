@@ -176,77 +176,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="hardware-overview"><a class="header" href="#hardware-overview">Hardware Overview</a></h1>
-<div align="center">
-<div align="center"><a href="../resources/unit_sch_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.pdf"><img src="../resources/Schematics_icon.jpg?raw=false" style="max-width: 500px; height: auto;" alt="Schematic"><br/> Schematic</a></div>
-</div>
-<h2 id="key-technical-specifications"><a class="header" href="#key-technical-specifications">Key Technical Specifications</a></h2>
-<div align="center">
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center"><strong>Parameter</strong></th><th style="text-align: center"><strong>Description</strong></th><th style="text-align: center"><strong>Min</strong></th><th style="text-align: center"><strong>Typ</strong></th><th style="text-align: center"><strong>Max</strong></th><th style="text-align: center"><strong>Unit</strong></th></tr></thead><tbody>
-<tr><td style="text-align: center">Vin</td><td style="text-align: center">Input voltage to power on the module</td><td style="text-align: center">5</td><td style="text-align: center">-</td><td style="text-align: center">20</td><td style="text-align: center">V</td></tr>
-<tr><td style="text-align: center">Vih</td><td style="text-align: center">High-level input voltage for I2C</td><td style="text-align: center">1.4</td><td style="text-align: center">-</td><td style="text-align: center">5.5</td><td style="text-align: center">V</td></tr>
-<tr><td style="text-align: center">Vil</td><td style="text-align: center">Low-level input voltage for I2C</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">0.4</td><td style="text-align: center">V</td></tr>
-<tr><td style="text-align: center">Icc</td><td style="text-align: center">Supply Current</td><td style="text-align: center">-</td><td style="text-align: center">3.1</td><td style="text-align: center">-</td><td style="text-align: center">mA</td></tr>
-<tr><td style="text-align: center">I3v3</td><td style="text-align: center">3V3 Power Supply Output Current</td><td style="text-align: center">-</td><td style="text-align: center">-</td><td style="text-align: center">2</td><td style="text-align: center">A</td></tr>
-</tbody></table>
-</div></div>
-<ul>
-<li><strong>Note:</strong> Output voltages and currents may vary with the characteristics of the power supply</li>
-</ul>
-<h2 id="pinout"><a class="header" href="#pinout">Pinout</a></h2>
-<div align="center">
-    <div align="center"><a href="#"><img src="../resources/unit_pinout_v_0_0_1_ue0094_icp10111_barometric_pressure_sensor_en.jpg" style="max-width: 500px; height: auto;" alt="Pinout"><br/> Pinout</a></div>
-    <br/>
-    <br/>
-    <br/>
-<div class="table-wrapper"><table><thead><tr><th>Pin Label</th><th>Function</th><th>Notes</th></tr></thead><tbody>
-<tr><td>VCC</td><td>Power Supply</td><td>3.3V or 5V</td></tr>
-<tr><td>GND</td><td>Ground</td><td>Common ground for all components</td></tr>
-</tbody></table>
-</div></div>
-<h2 id="pin--connector-layout"><a class="header" href="#pin--connector-layout">Pin &amp; Connector Layout</a></h2>
-<div align="center">
-<div class="table-wrapper"><table><thead><tr><th>Pin</th><th>Voltage Level</th><th>Function</th></tr></thead><tbody>
-<tr><td>VCC</td><td>3.3 V – 5.5 V</td><td>Provides power to the on-board regulator and sensor core.</td></tr>
-<tr><td>GND</td><td>0 V</td><td>Common reference for power and signals.</td></tr>
-<tr><td>SDA</td><td>1.8 V to VCC</td><td>Serial data line for I²C communications.</td></tr>
-<tr><td>SCL</td><td>1.8 V to VCC</td><td>Serial clock line for I²C communications.</td></tr>
-</tbody></table>
-</div>
-<blockquote>
-<p><strong>Note:</strong> The module also includes a Qwiic/STEMMA QT connector carrying the same four signals (VCC, GND, SDA, SCL) for effortless daisy-chaining.</p>
-</blockquote>
-</div>
-<h2 id="topology"><a class="header" href="#topology">Topology</a></h2>
-<div align="center">
-<div align="center"><a href="../resources/unit_topology_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.png><img%20src="><img src="../resources/unit_topology_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.png" style="max-width: 500px; height: auto;" alt="Topology"><br/> Topology</a></div>
-<br/>
-<br/>
-<br/>
-<div class="table-wrapper"><table><thead><tr><th>Ref.</th><th>Description</th></tr></thead><tbody>
-<tr><td>J1</td><td>USB Type-C Connector</td></tr>
-<tr><td>J2-J6</td><td>QWIIC Connectors for I2C (JST 1mm)</td></tr>
-<tr><td>J7</td><td>Screw Terminal Block for VUSB</td></tr>
-<tr><td>L1</td><td>Power On LED</td></tr>
-<tr><td>IC1</td><td>HUSB238</td></tr>
-<tr><td>SW1</td><td>Dip Switch for voltage selector</td></tr>
-<tr><td>U1</td><td>TPS54302 3.3V Regulator</td></tr>
-<tr><td>JP1</td><td>Pin Header for 3V3 power supply and GND</td></tr>
-<tr><td>JB1</td><td>Jumper Bridge to Join HUSB238 SDA with QWIIC Connectors</td></tr>
-<tr><td>JB2</td><td>Jumper Bridge to Join HUSB238 SCL with QWIIC Connectors</td></tr>
-<tr><td>P1</td><td>Pads for 3.3V Power Supply</td></tr>
-<tr><td>TP1</td><td>Test Points for PD Vset</td></tr>
-<tr><td>TP2</td><td>USB Test Points</td></tr>
-</tbody></table>
-</div></div>
-<h2 id="dimensions"><a class="header" href="#dimensions">Dimensions</a></h2>
-<div align="center">
-<div align="center"><a href="../resources/unit_dimension_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.png"><img src="../resources/unit_dimension_v_1_0_0_ue0084_devlab_husb238_usb-c_pd_module.png" style="max-width: 500px; height: auto;" alt="Dimensions"><br/> Dimensions</a></div>
-</div>
-<h1 id="references"><a class="header" href="#references">References</a></h1>
-<ul>
-<li><a href="../resources/unit_datasheet_v_1_0_0_ue0084_husb238.pdf">HUSB238 Datasheet </a></li>
-<li><a href="../resources/unit_datasheet_v_1_0_0_ue0084_tps54302.pdf">TPS54302 Datasheet </a></li>
-</ul>
+<p>No hardware README.md found. Please create hardware/README.md with your hardware documentation.</p>
 
                     </main>
 
@@ -256,7 +186,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../hardware/key-technical-specifications.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../software/getting-started.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -270,7 +200,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../hardware/key-technical-specifications.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../software/getting-started.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
