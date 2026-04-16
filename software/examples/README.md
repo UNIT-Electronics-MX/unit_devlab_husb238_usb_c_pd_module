@@ -24,6 +24,18 @@ Located in `example_1/example_1.ino`
 
 This example implements a SCPI-like command interface for controlling the HUSB238 USB PD controller via Serial communication.
 
+### Example 2: Basic Usage
+
+Located in `example_2/example_2.ino`
+
+This example demonstrates the fundamental usage of the HUSB238 library with a simple, self-running demonstration that:
+- Automatically detects available USB PD voltages
+- Displays current voltage and current capabilities
+- Demonstrates voltage switching
+- Continuously monitors system status
+
+This is an ideal starting point for understanding the basic library functions without the complexity of command parsing.
+
 #### Features
 - Query device identification and status
 - List available USB PD voltages
